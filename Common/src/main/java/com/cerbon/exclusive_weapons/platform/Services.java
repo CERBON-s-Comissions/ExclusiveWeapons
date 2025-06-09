@@ -1,10 +1,12 @@
 package com.cerbon.exclusive_weapons.platform;
 
 import com.cerbon.exclusive_weapons.ExclusiveWeapons;
+import com.cerbon.exclusive_weapons.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
 public class Services {
+    public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
 
     public static <T> T load(Class<T> clazz) {
         final T loadedService = ServiceLoader.load(clazz)
