@@ -5,6 +5,7 @@ import com.cerbon.exclusive_weapons.registry.RegistryEntry;
 import com.cerbon.exclusive_weapons.registry.item.ItemRegistry;
 import com.cerbon.exclusive_weapons.registry.item.ToolType;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.util.Mth;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.TieredItem;
 
@@ -15,17 +16,27 @@ public class EWItems {
 
     public static final float STAT_BOOST = 1.25F;
 
+    public static float addBoost(Number base) {
+        if (base instanceof Integer integer)
+            return Mth.ceil(integer * STAT_BOOST);
+
+        else if (base instanceof Float float_)
+            return float_ * STAT_BOOST;
+
+        throw new RuntimeException();
+    }
+
     // ========== SUPER IRON ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_IRON_ARMOR = ITEMS.registerFullArmorSet(
             () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_IRON.get()),
-            (int) (15 * STAT_BOOST),
+            (int) addBoost(15),
             "super_iron"
     );
 
     public static final RegistryEntry<TieredItem> SUPER_IRON_SWORD = ITEMS.registerSimpleTool(
             ToolType.SWORD,
             EWTiers.SUPER_IRON,
-            3.0F * STAT_BOOST,
+            addBoost(3.0F),
             -2.4F,
             "super_iron_sword"
     );
@@ -41,7 +52,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_IRON_AXE = ITEMS.registerSimpleTool(
             ToolType.AXE,
             EWTiers.SUPER_IRON,
-            6.0F * STAT_BOOST,
+            addBoost(6.0F),
             -3.1F,
             "super_iron_axe"
     );
@@ -49,7 +60,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_IRON_SHOVEL = ITEMS.registerSimpleTool(
             ToolType.SHOVEL,
             EWTiers.SUPER_IRON,
-            1.5F * STAT_BOOST,
+            addBoost(1.5F),
             -3.0F,
             "super_iron_shovel"
     );
@@ -57,7 +68,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_IRON_HOE = ITEMS.registerSimpleTool(
             ToolType.HOE,
             EWTiers.SUPER_IRON,
-            -2.0F * STAT_BOOST,
+            addBoost(-2.0F),
             -1.0F,
             "super_iron_hoe"
     );
@@ -65,14 +76,14 @@ public class EWItems {
     // ========== SUPER GOLD ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_GOLD_ARMOR = ITEMS.registerFullArmorSet(
             () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_GOLD.get()),
-            (int) (7 * STAT_BOOST),
+            (int) addBoost(7),
             "super_gold"
     );
 
     public static final RegistryEntry<TieredItem> SUPER_GOLD_SWORD = ITEMS.registerSimpleTool(
             ToolType.SWORD,
             EWTiers.SUPER_GOLD,
-            3.0F * STAT_BOOST,
+            addBoost(3.0F),
             -2.4F,
             "super_gold_sword"
     );
@@ -88,7 +99,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_GOLD_AXE = ITEMS.registerSimpleTool(
             ToolType.AXE,
             EWTiers.SUPER_GOLD,
-            6.0F * STAT_BOOST,
+            addBoost(6.0F),
             -3.0F,
             "super_gold_axe"
     );
@@ -96,7 +107,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_GOLD_SHOVEL = ITEMS.registerSimpleTool(
             ToolType.SHOVEL,
             EWTiers.SUPER_GOLD,
-            1.5F * STAT_BOOST,
+            addBoost(1.5F),
             -3.0F,
             "super_gold_shovel"
     );
@@ -104,7 +115,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_GOLD_HOE = ITEMS.registerSimpleTool(
             ToolType.HOE,
             EWTiers.SUPER_GOLD,
-            0 * STAT_BOOST,
+            addBoost(0),
             -3.0F,
             "super_gold_hoe"
     );
@@ -112,14 +123,14 @@ public class EWItems {
     // ========== SUPER DIAMOND ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_DIAMOND_ARMOR = ITEMS.registerFullArmorSet(
             () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_DIAMOND.get()),
-            (int) (33 * STAT_BOOST),
+            (int) addBoost(33),
             "super_diamond"
     );
 
     public static final RegistryEntry<TieredItem> SUPER_DIAMOND_SWORD = ITEMS.registerSimpleTool(
             ToolType.SWORD,
             EWTiers.SUPER_DIAMOND,
-            3.0F * STAT_BOOST,
+            addBoost(3.0F),
             -2.4F,
             "super_diamond_sword"
     );
@@ -135,7 +146,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_DIAMOND_AXE = ITEMS.registerSimpleTool(
             ToolType.AXE,
             EWTiers.SUPER_DIAMOND,
-            5.0F * STAT_BOOST,
+            addBoost(5.0F),
             -3.0F,
             "super_diamond_axe"
     );
@@ -143,7 +154,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_DIAMOND_SHOVEL = ITEMS.registerSimpleTool(
             ToolType.SHOVEL,
             EWTiers.SUPER_DIAMOND,
-            1.5F * STAT_BOOST,
+            addBoost(1.5F),
             -3.0F,
             "super_diamond_shovel"
     );
@@ -151,7 +162,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_DIAMOND_HOE = ITEMS.registerSimpleTool(
             ToolType.HOE,
             EWTiers.SUPER_DIAMOND,
-            -3.0F * STAT_BOOST,
+            addBoost(-3.0F),
             0.0F,
             "super_diamond_hoe"
     );
@@ -159,14 +170,14 @@ public class EWItems {
     // ========== SUPER NETHERITE ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_NETHERITE_ARMOR = ITEMS.registerFullArmorSet(
             () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_NETHERITE.get()),
-            (int) (37 * STAT_BOOST),
+            (int) addBoost(37),
             "super_netherite"
     );
 
     public static final RegistryEntry<TieredItem> SUPER_NETHERITE_SWORD = ITEMS.registerSimpleTool(
             ToolType.SWORD,
             EWTiers.SUPER_NETHERITE,
-            3.0F * STAT_BOOST,
+            addBoost(3.0F),
             -2.4F,
             "super_netherite_sword"
     );
@@ -182,7 +193,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_NETHERITE_AXE = ITEMS.registerSimpleTool(
             ToolType.AXE,
             EWTiers.SUPER_NETHERITE,
-            5.0F * STAT_BOOST,
+            addBoost(5.0F),
             -3.0F,
             "super_netherite_axe"
     );
@@ -190,7 +201,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_NETHERITE_SHOVEL = ITEMS.registerSimpleTool(
             ToolType.SHOVEL,
             EWTiers.SUPER_NETHERITE,
-            1.5F * STAT_BOOST,
+            addBoost(1.5F),
             -3.0F,
             "super_netherite_shovel"
     );
@@ -198,7 +209,7 @@ public class EWItems {
     public static final RegistryEntry<TieredItem> SUPER_NETHERITE_HOE = ITEMS.registerSimpleTool(
             ToolType.HOE,
             EWTiers.SUPER_NETHERITE,
-            -4.0F * STAT_BOOST,
+            addBoost(-4.0F),
             0.0F,
             "super_netherite_hoe"
     );

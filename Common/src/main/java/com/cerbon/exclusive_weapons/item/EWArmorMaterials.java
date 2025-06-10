@@ -20,6 +20,8 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
 
+import static com.cerbon.exclusive_weapons.item.EWItems.addBoost;
+
 public class EWArmorMaterials {
     public static final ResourcefulRegistry<ArmorMaterial> ARMOR_MATERIALS = ResourcefulRegistries.create(
             BuiltInRegistries.ARMOR_MATERIAL,
@@ -27,36 +29,36 @@ public class EWArmorMaterials {
     );
 
     public static final RegistryEntry<ArmorMaterial> SUPER_IRON = register("super_iron", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 2);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 5);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 6);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 5);
-    }), (int) (9 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_IRON, 0.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.IRON_INGOT);
+        enumMap.put(ArmorItem.Type.BOOTS, (int) addBoost(2));
+        enumMap.put(ArmorItem.Type.LEGGINGS, (int) addBoost(5));
+        enumMap.put(ArmorItem.Type.CHESTPLATE, (int) addBoost(6));
+        enumMap.put(ArmorItem.Type.HELMET, (int) addBoost(2));
+        enumMap.put(ArmorItem.Type.BODY, (int) addBoost(5));
+    }), (int) addBoost(9), SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Items.IRON_INGOT);
 
     public static final RegistryEntry<ArmorMaterial> SUPER_GOLD = register("super_gold", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 1);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 5);
-        enumMap.put(ArmorItem.Type.HELMET, 2);
-        enumMap.put(ArmorItem.Type.BODY, 7);
-    }), (int) (25 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_GOLD, 0.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.GOLD_INGOT);
+        enumMap.put(ArmorItem.Type.BOOTS, (int) addBoost(1));
+        enumMap.put(ArmorItem.Type.LEGGINGS, (int) addBoost(3));
+        enumMap.put(ArmorItem.Type.CHESTPLATE, (int) addBoost(5));
+        enumMap.put(ArmorItem.Type.HELMET, (int) addBoost(2));
+        enumMap.put(ArmorItem.Type.BODY, (int) addBoost(7));
+    }), (int) addBoost(25), SoundEvents.ARMOR_EQUIP_GOLD, 0.0F, 0.0F, () -> Items.GOLD_INGOT);
 
     public static final RegistryEntry<ArmorMaterial> SUPER_DIAMOND = register("super_diamond", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 3);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
-        enumMap.put(ArmorItem.Type.HELMET, 3);
-        enumMap.put(ArmorItem.Type.BODY, 11);
-    }), (int) (10 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.DIAMOND);
+        enumMap.put(ArmorItem.Type.BOOTS, (int) addBoost(3));
+        enumMap.put(ArmorItem.Type.LEGGINGS, (int) addBoost(6));
+        enumMap.put(ArmorItem.Type.CHESTPLATE, (int) addBoost(8));
+        enumMap.put(ArmorItem.Type.HELMET, (int) addBoost(3));
+        enumMap.put(ArmorItem.Type.BODY, (int) addBoost(11));
+    }), (int) addBoost(10), SoundEvents.ARMOR_EQUIP_DIAMOND, addBoost(2.0F), 0.0F, () -> Items.DIAMOND);
 
     public static final RegistryEntry<ArmorMaterial> SUPER_NETHERITE = register("super_netherite", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
-        enumMap.put(ArmorItem.Type.BOOTS, 3);
-        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
-        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
-        enumMap.put(ArmorItem.Type.HELMET, 3);
-        enumMap.put(ArmorItem.Type.BODY, 11);
-    }), (int) (15 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F * EWItems.STAT_BOOST, 0.1F * EWItems.STAT_BOOST, () -> Items.NETHERITE_INGOT);
+        enumMap.put(ArmorItem.Type.BOOTS, (int) addBoost(3));
+        enumMap.put(ArmorItem.Type.LEGGINGS, (int) addBoost(6));
+        enumMap.put(ArmorItem.Type.CHESTPLATE, (int) addBoost(8));
+        enumMap.put(ArmorItem.Type.HELMET, (int) addBoost(3));
+        enumMap.put(ArmorItem.Type.BODY, (int) addBoost(11));
+    }), (int) addBoost(15), SoundEvents.ARMOR_EQUIP_NETHERITE, addBoost(3.0F), addBoost(0.1F), () -> Items.NETHERITE_INGOT);
 
     private static RegistryEntry<ArmorMaterial> register(
             String name,

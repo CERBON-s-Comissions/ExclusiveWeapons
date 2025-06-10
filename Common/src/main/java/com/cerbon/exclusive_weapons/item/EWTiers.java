@@ -10,11 +10,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+import static com.cerbon.exclusive_weapons.item.EWItems.addBoost;
+
 public enum EWTiers implements Tier {
-    SUPER_IRON(BlockTags.INCORRECT_FOR_IRON_TOOL, (int) (250 * EWItems.STAT_BOOST), 6.0F * EWItems.STAT_BOOST, 2.0F * EWItems.STAT_BOOST, (int) (14 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.IRON_INGOT)),
-    SUPER_DIAMOND(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, (int) (1561 * EWItems.STAT_BOOST), 8.0F * EWItems.STAT_BOOST, 3.0F * EWItems.STAT_BOOST, (int) (10 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.DIAMOND)),
-    SUPER_GOLD(BlockTags.INCORRECT_FOR_GOLD_TOOL, (int) (32 * EWItems.STAT_BOOST), 12.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, (int) (22 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.GOLD_INGOT)),
-    SUPER_NETHERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, (int) (2031 * EWItems.STAT_BOOST), 9.0F * EWItems.STAT_BOOST, 4.0F * EWItems.STAT_BOOST, (int) (15 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.NETHERITE_INGOT));
+    SUPER_IRON(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 6.0F , 2.0F , 14, () -> Ingredient.of(Items.IRON_INGOT)),
+    SUPER_DIAMOND(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, 1561, 8.0F , 3.0F , 10, () -> Ingredient.of(Items.DIAMOND)),
+    SUPER_GOLD(BlockTags.INCORRECT_FOR_GOLD_TOOL, 32, 12.0F , 0.0F , 22, () -> Ingredient.of(Items.GOLD_INGOT)),
+    SUPER_NETHERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F , 4.0F , 15, () -> Ingredient.of(Items.NETHERITE_INGOT));
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;
@@ -25,10 +27,10 @@ public enum EWTiers implements Tier {
 
     EWTiers(TagKey<Block> incorrectBlocksForDrops, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.incorrectBlocksForDrops = incorrectBlocksForDrops;
-        this.uses = uses;
-        this.speed = speed;
-        this.damage = damage;
-        this.enchantmentValue = enchantmentValue;
+        this.uses = (int) addBoost(uses);
+        this.speed = addBoost(speed);
+        this.damage = addBoost(damage);
+        this.enchantmentValue = (int) addBoost(enchantmentValue);
         this.repairIngredient = repairIngredient;
     }
 
