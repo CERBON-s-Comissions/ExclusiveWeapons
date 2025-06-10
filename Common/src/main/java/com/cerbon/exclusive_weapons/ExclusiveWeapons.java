@@ -13,8 +13,8 @@ public class ExclusiveWeapons {
 	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public static void init() {
-		EWArmorMaterials.register();
 		EWItems.register();
+		EWArmorMaterials.register();
 		EWCreativeTabs.register();
 	}
 }
