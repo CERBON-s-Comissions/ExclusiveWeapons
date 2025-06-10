@@ -14,6 +14,6 @@ public class EWItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        EWItems.REGISTRY.boundStream().forEach(this::basicItem);
+        EWItems.ITEMS.boundStream().forEach(this::basicItem);
     }
 }

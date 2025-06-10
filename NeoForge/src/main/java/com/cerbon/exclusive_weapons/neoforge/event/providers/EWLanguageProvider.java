@@ -18,7 +18,7 @@ public class EWLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        EWItems.REGISTRY.boundStream().forEach(this::addTranslation);
+        EWItems.ITEMS.boundStream().forEach(this::addTranslation);
 
         add("itemGroup.exclusive_weapons.ew_creative_tab", "Exclusive Weapons");
     }

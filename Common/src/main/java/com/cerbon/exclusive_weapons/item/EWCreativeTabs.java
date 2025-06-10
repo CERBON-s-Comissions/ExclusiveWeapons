@@ -20,7 +20,7 @@ public class EWCreativeTabs {
             () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 6)
                     .title(Component.translatable("itemGroup.exclusive_weapons.ew_creative_tab"))
                     .icon(() -> new ItemStack(EWItems.SUPER_IRON_PICKAXE.get()))
-                    .displayItems((itemDisplayParameters, output) -> EWItems.REGISTRY.boundStream().forEach(output::accept))
+                    .displayItems((itemDisplayParameters, output) -> EWItems.ITEMS.boundStream().forEach(output::accept))
                     .build()
     );
 
