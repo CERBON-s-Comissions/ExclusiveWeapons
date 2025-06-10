@@ -1,7 +1,9 @@
 package com.cerbon.exclusive_weapons.neoforge.event;
 
 import com.cerbon.exclusive_weapons.ExclusiveWeapons;
+import com.cerbon.exclusive_weapons.neoforge.event.providers.EWBlockTagsProvider;
 import com.cerbon.exclusive_weapons.neoforge.event.providers.EWItemModelProvider;
+import com.cerbon.exclusive_weapons.neoforge.event.providers.EWItemTagsProvider;
 import com.cerbon.exclusive_weapons.neoforge.event.providers.EWLanguageProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -24,8 +26,8 @@ public class EWEventsNeo {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         //generator.addProvider(event.includeServer(), SOBLootTableProvider.create(packOutput, lookupProvider));
-        //SOBBlockTagProvider blockTagProvider = generator.addProvider(event.includeServer(), new SOBBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
-        //generator.addProvider(event.includeServer(), new SOBItemTagProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
+        EWBlockTagsProvider blockTagProvider = generator.addProvider(event.includeServer(), new EWBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new EWItemTagsProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
         //generator.addProvider(event.includeServer(), new SOBRecipeProvider(packOutput, lookupProvider));
 
         //generator.addProvider(event.includeClient(), new SOBBlockStateProvider(packOutput, existingFileHelper));
