@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "super_ore_block:super_gold_block"
+  },
+  "base": {
+    "item": "minecraft:golden_chestplate"
+  },
+  "result": {
+    "count": 1,
+    "id": "exclusive_weapons:super_gold_chestplate"
+  },
+  "template": []
+}

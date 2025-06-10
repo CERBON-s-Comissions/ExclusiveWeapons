@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "super_ore_block:super_netherite_block"
+  },
+  "base": {
+    "item": "minecraft:netherite_helmet"
+  },
+  "result": {
+    "count": 1,
+    "id": "exclusive_weapons:super_netherite_helmet"
+  },
+  "template": []
+}

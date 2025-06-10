@@ -1,10 +1,7 @@
 package com.cerbon.exclusive_weapons.neoforge.event;
 
 import com.cerbon.exclusive_weapons.ExclusiveWeapons;
-import com.cerbon.exclusive_weapons.neoforge.event.providers.EWBlockTagsProvider;
-import com.cerbon.exclusive_weapons.neoforge.event.providers.EWItemModelProvider;
-import com.cerbon.exclusive_weapons.neoforge.event.providers.EWItemTagsProvider;
-import com.cerbon.exclusive_weapons.neoforge.event.providers.EWLanguageProvider;
+import com.cerbon.exclusive_weapons.neoforge.event.providers.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -28,7 +25,7 @@ public class EWEventsNeo {
         //generator.addProvider(event.includeServer(), SOBLootTableProvider.create(packOutput, lookupProvider));
         EWBlockTagsProvider blockTagProvider = generator.addProvider(event.includeServer(), new EWBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new EWItemTagsProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
-        //generator.addProvider(event.includeServer(), new SOBRecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new EWRecipeProvider(packOutput, lookupProvider));
 
         //generator.addProvider(event.includeClient(), new SOBBlockStateProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new EWItemModelProvider(packOutput, existingFileHelper));

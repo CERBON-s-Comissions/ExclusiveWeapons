@@ -31,6 +31,7 @@ dependencies {
 
     // NeoForge Dependencies
     //modImplementation "com.cerbon:cerbons_api-neoforge-${minecraft_version}:${cerbons_api_version}"
+    modImplementation "com.cerbon:sob-neoforge-${minecraft_version}:${super_ore_block_version}"
 
     implementation include("io.github.llamalad7:mixinextras-neoforge:${mixin_extras_version}")
 
