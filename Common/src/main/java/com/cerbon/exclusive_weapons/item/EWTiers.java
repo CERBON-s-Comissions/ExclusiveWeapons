@@ -11,7 +11,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Supplier;
 
 public enum EWTiers implements Tier {
-    SUPER_IRON(BlockTags.INCORRECT_FOR_IRON_TOOL, (int) (250 * EWItems.STAT_BOOST), 6.0F * EWItems.STAT_BOOST, 2.0F * EWItems.STAT_BOOST, (int) (14 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.IRON_INGOT));
+    SUPER_IRON(BlockTags.INCORRECT_FOR_IRON_TOOL, (int) (250 * EWItems.STAT_BOOST), 6.0F * EWItems.STAT_BOOST, 2.0F * EWItems.STAT_BOOST, (int) (14 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.IRON_INGOT)),
+    SUPER_DIAMOND(BlockTags.INCORRECT_FOR_DIAMOND_TOOL, (int) (1561 * EWItems.STAT_BOOST), 8.0F * EWItems.STAT_BOOST, 3.0F * EWItems.STAT_BOOST, (int) (10 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.DIAMOND)),
+    SUPER_GOLD(BlockTags.INCORRECT_FOR_GOLD_TOOL, (int) (32 * EWItems.STAT_BOOST), 12.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, (int) (22 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.GOLD_INGOT)),
+    SUPER_NETHERITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, (int) (2031 * EWItems.STAT_BOOST), 9.0F * EWItems.STAT_BOOST, 4.0F * EWItems.STAT_BOOST, (int) (15 * EWItems.STAT_BOOST), () -> Ingredient.of(Items.NETHERITE_INGOT));
 
     private final TagKey<Block> incorrectBlocksForDrops;
     private final int uses;

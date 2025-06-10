@@ -32,7 +32,31 @@ public class EWArmorMaterials {
         enumMap.put(ArmorItem.Type.CHESTPLATE, 6);
         enumMap.put(ArmorItem.Type.HELMET, 2);
         enumMap.put(ArmorItem.Type.BODY, 5);
-    }), (int) (9 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Items.IRON_INGOT);
+    }), (int) (9 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_IRON, 0.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.IRON_INGOT);
+
+    public static final RegistryEntry<ArmorMaterial> SUPER_GOLD = register("super_gold", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 1);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 3);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 5);
+        enumMap.put(ArmorItem.Type.HELMET, 2);
+        enumMap.put(ArmorItem.Type.BODY, 7);
+    }), (int) (25 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_GOLD, 0.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.GOLD_INGOT);
+
+    public static final RegistryEntry<ArmorMaterial> SUPER_DIAMOND = register("super_diamond", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 3);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
+        enumMap.put(ArmorItem.Type.HELMET, 3);
+        enumMap.put(ArmorItem.Type.BODY, 11);
+    }), (int) (10 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F * EWItems.STAT_BOOST, 0.0F * EWItems.STAT_BOOST, () -> Items.DIAMOND);
+
+    public static final RegistryEntry<ArmorMaterial> SUPER_NETHERITE = register("super_netherite", Util.make(new EnumMap<>(ArmorItem.Type.class), enumMap -> {
+        enumMap.put(ArmorItem.Type.BOOTS, 3);
+        enumMap.put(ArmorItem.Type.LEGGINGS, 6);
+        enumMap.put(ArmorItem.Type.CHESTPLATE, 8);
+        enumMap.put(ArmorItem.Type.HELMET, 3);
+        enumMap.put(ArmorItem.Type.BODY, 11);
+    }), (int) (15 * EWItems.STAT_BOOST), SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F * EWItems.STAT_BOOST, 0.1F * EWItems.STAT_BOOST, () -> Items.NETHERITE_INGOT);
 
     private static RegistryEntry<ArmorMaterial> register(
             String name,
