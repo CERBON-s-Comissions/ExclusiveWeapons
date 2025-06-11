@@ -1,5 +1,6 @@
 package com.cerbon.exclusive_weapons.neoforge.event.providers;
 
+import com.cerbon.exclusive_weapons.ExclusiveWeapons;
 import com.cerbon.exclusive_weapons.item.EWItems;
 import com.cerbon.super_ore_block.block.SOBBlocks;
 import net.minecraft.core.HolderLookup;
@@ -82,6 +83,6 @@ public class EWRecipeProvider extends VanillaRecipeProvider {
                         cat,
                         result)
                 .unlocks("has_item", has(base))
-                .save(out, name);
+                .save(out, ExclusiveWeapons.MOD_ID + ":" + name);
     }
 }
