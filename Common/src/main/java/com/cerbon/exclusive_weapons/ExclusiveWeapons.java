@@ -14,7 +14,6 @@ public class ExclusiveWeapons {
 
 	public static void init() {
 		EWItems.register();
-		EWArmorMaterials.register();
 		EWCreativeTabs.register();
 	}
 }

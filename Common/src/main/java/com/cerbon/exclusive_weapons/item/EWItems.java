@@ -4,7 +4,6 @@ import com.cerbon.exclusive_weapons.ExclusiveWeapons;
 import com.cerbon.exclusive_weapons.registry.RegistryEntry;
 import com.cerbon.exclusive_weapons.registry.item.ItemRegistry;
 import com.cerbon.exclusive_weapons.registry.item.ToolType;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.TieredItem;
@@ -28,8 +27,7 @@ public class EWItems {
 
     // ========== SUPER IRON ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_IRON_ARMOR = ITEMS.registerFullArmorSet(
-            () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_IRON.get()),
-            (int) addBoost(15),
+            EWArmorMaterials.SUPER_IRON,
             "super_iron"
     );
 
@@ -75,8 +73,7 @@ public class EWItems {
 
     // ========== SUPER GOLD ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_GOLD_ARMOR = ITEMS.registerFullArmorSet(
-            () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_GOLD.get()),
-            (int) addBoost(7),
+            EWArmorMaterials.SUPER_GOLD,
             "super_gold"
     );
 
@@ -122,8 +119,7 @@ public class EWItems {
 
     // ========== SUPER DIAMOND ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_DIAMOND_ARMOR = ITEMS.registerFullArmorSet(
-            () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_DIAMOND.get()),
-            (int) addBoost(33),
+            EWArmorMaterials.SUPER_DIAMOND,
             "super_diamond"
     );
 
@@ -169,8 +165,7 @@ public class EWItems {
 
     // ========== SUPER NETHERITE ==========
     public static final Map<ArmorItem.Type, RegistryEntry<ArmorItem>> SUPER_NETHERITE_ARMOR = ITEMS.registerFullArmorSet(
-            () -> BuiltInRegistries.ARMOR_MATERIAL.wrapAsHolder(EWArmorMaterials.SUPER_NETHERITE.get()),
-            (int) addBoost(37),
+            EWArmorMaterials.SUPER_NETHERITE,
             "super_netherite"
     );
 

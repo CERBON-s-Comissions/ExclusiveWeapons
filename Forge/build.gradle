@@ -25,6 +25,7 @@ dependencies {
 
     // Forge Dependencies
     //modImplementation "com.cerbon:cerbons_api-forge-${minecraft_version}:${cerbons_api_version}"
+    modImplementation "com.cerbon:sob-forge-${minecraft_version}:${super_ore_block_version}"
 
     implementation include("io.github.llamalad7:mixinextras-forge:${mixin_extras_version}")
 

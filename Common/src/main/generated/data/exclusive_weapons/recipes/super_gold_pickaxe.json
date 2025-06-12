@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "super_ore_block:super_gold_block"
+  },
+  "base": {
+    "item": "minecraft:golden_pickaxe"
+  },
+  "result": {
+    "count": 1,
+    "item": "exclusive_weapons:super_gold_pickaxe"
+  },
+  "template": []
+}
