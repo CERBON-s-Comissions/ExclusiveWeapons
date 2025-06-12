@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:netherite_chestplate"
+            "items": [
+              "minecraft:netherite_chestplate"
+            ]
           }
         ]
       },
@@ -20,13 +22,14 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
-      "has_item"
+      "has_item",
+      "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
       "exclusive_weapons:super_netherite_chestplate"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }
