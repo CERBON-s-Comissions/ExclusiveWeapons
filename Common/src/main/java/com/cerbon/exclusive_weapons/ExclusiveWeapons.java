@@ -1,6 +1,5 @@
 package com.cerbon.exclusive_weapons;
 
-import com.cerbon.exclusive_weapons.item.EWArmorMaterials;
 import com.cerbon.exclusive_weapons.item.EWCreativeTabs;
 import com.cerbon.exclusive_weapons.item.EWItems;
 import com.mojang.logging.LogUtils;

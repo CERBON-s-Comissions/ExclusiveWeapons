@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/generated",
+  "parent": "minecraft:item/handheld",
   "textures": {
     "layer0": "exclusive_weapons:item/super_gold_shovel"
   }
